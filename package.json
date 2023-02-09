@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clwy-cn/clwy-react-native-scrollable-tab-view.git"
+    "url": "git+https://github.com/clwy-cn/clwy-expo-scrollable-tab-view.git"
   },
   "keywords": [
     "react-native-component",
@@ -27,7 +27,7 @@
   "peerDependencies": {
     "react-native": ">=0.20.0"
   },
-  "homepage": "https://github.com/clwy-cn/clwy-react-native-scrollable-tab-view#readme",
+  "homepage": "https://github.com/clwy-cn/clwy-expo-scrollable-tab-view#readme",
   "dependencies": {
     "react-native-pager-view": "^6.0.1",
     "create-react-class": "^15.6.2",
