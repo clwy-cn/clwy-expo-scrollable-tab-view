@@ -1,78 +1,44 @@
 
 ## clwy-expo-scrollable-tab-view
-[![npm version](https://badge.fury.io/js/react-native-scrollable-tab-view.svg)](https://badge.fury.io/js/react-native-scrollable-tab-view)
-
-This is probably my favorite navigation pattern on Android, I wish it
-were more common on iOS! This is a very simple JavaScript-only
-implementation of it for React Native. For more information about how
-the animations behind this work, check out the Rebound section of the
-[React Native Animation Guide](https://facebook.github.io/react-native/docs/animations.html)
-
 
 ## Add it to your project
 
 Run 
 ```
-yarn expo install react-native-pager-view
-yarn add clwy-expo-scrollable-tab-view
+npx expo install react-native-pager-view clwy-expo-scrollable-tab-view
 ```
 
 ## Demo
-<a href="https://appetize.io/embed/6qfv7eydjtm34mhn6qwj2nt3xm?embed=true&screenOnly=false&xdocMsg=true&debug=true&scale=100&deviceColor=black&orientation=portrait&device=iphone6s&osVersion=9.3&deviceId=RGV2aWNlOjU2Y2FjNTExZWQwOTM2MTEwMGRhYTNlNg&platform=ios&width=375&height=668&phoneWidth=416&phoneHeight=870&screenOffsetLeft=21&screenOffsetTop=100&params=%7B%7D" target="_blank"><strong>Run this example</strong></a>
-
-<a href="https://raw.githubusercontent.com/brentvatne/react-native-scrollable-tab-view/master/demo_images/demo.gif"><img src="https://raw.githubusercontent.com/brentvatne/react-native-scrollable-tab-view/master/demo_images/demo.gif" width="350"></a>
-<a href="https://raw.githubusercontent.com/brentvatne/react-native-scrollable-tab-view/master/demo_images/demo-fb.gif"><img src="https://raw.githubusercontent.com/brentvatne/react-native-scrollable-tab-view/master/demo_images/demo-fb.gif" width="350"></a>
 
 ## Basic usage
 
 ```javascript
-var ScrollableTabView = require('clwy-react-native-scrollable-tab-view');
+import ScrollableTabView, { ScrollableTabBar } from '../../../components/clwy-expo-scrollable-tab-view';
+import { Text } from 'react-native';
 
-var App = React.createClass({
-  render() {
-    return (
-      <ScrollableTabView>
-        <ReactPage tabLabel="React" />
-        <FlowPage tabLabel="Flow" />
-        <JestPage tabLabel="Jest" />
-      </ScrollableTabView>
-    );
-  }
-});
+export default function Index() {
+  return (
+          <ScrollableTabView
+                  initialPage={0}
+                  tabBarUnderlineStyle={{ backgroundColor: '#e29447', height: 2 }}
+                  tabBarBackgroundColor={'#fff'}
+                  tabBarInactiveTextColor={'#777'}
+                  tabBarActiveTextColor={'#000'}
+                  tabBarTextStyle={{ fontWeight: '400' }}
+                  renderTabBar={() => <ScrollableTabBar />}
+          >
+            <Text tabLabel="新闻">新闻的内容</Text>
+            <Text tabLabel="体育">体育的内容</Text>
+            <Text tabLabel="生活">生活的内容</Text>
+            <Text tabLabel="娱乐">娱乐的内容</Text>
+            <Text tabLabel="科技">科技的内容</Text>
+            <Text tabLabel="创业">创业的内容</Text>
+            <Text tabLabel="教育">教育内容</Text>
+            <Text tabLabel="财经">财经的内容</Text>
+          </ScrollableTabView>
+  );
+}
 ```
-
-## Injecting a custom tab bar
-
-Suppose we had a custom tab bar called `CustomTabBar`, we would inject
-it into our `ScrollableTabView` like this:
-
-```javascript
-var ScrollableTabView = require('clwy-react-native-scrollable-tab-view');
-var CustomTabBar = require('./CustomTabBar');
-
-var App = React.createClass({
-  render() {
-    return (
-      <ScrollableTabView renderTabBar={() => <CustomTabBar someProp={'here'} />}>
-        <ReactPage tabLabel="React" />
-        <FlowPage tabLabel="Flow" />
-        <JestPage tabLabel="Jest" />
-      </ScrollableTabView>
-    );
-  }
-});
-```
-To start you can just copy [DefaultTabBar](https://github.com/skv-headless/react-native-scrollable-tab-view/blob/master/DefaultTabBar.js).
-
-## Examples
-
-[SimpleExample](https://github.com/skv-headless/react-native-scrollable-tab-view/blob/master/Example/SimpleExample.js).
-
-[ScrollableTabsExample](https://github.com/skv-headless/react-native-scrollable-tab-view/blob/master/Example/ScrollableTabsExample.js).
-
-[OverlayExample](https://github.com/skv-headless/react-native-scrollable-tab-view/blob/master/Example/OverlayExample.js).
-
-[FacebookExample](https://github.com/skv-headless/react-native-scrollable-tab-view/blob/master/Example/FacebookExample.js).
 
 ## Props
 

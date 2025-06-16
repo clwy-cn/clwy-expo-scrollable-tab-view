@@ -76,6 +76,7 @@ const ScrollableTabView = createReactClass({
     if (Platform.OS === 'ios') {
       scrollXIOS = new Animated.Value(this.props.initialPage * containerWidth);
       const containerWidthAnimatedValue = new Animated.Value(containerWidth);
+
       // Need to call __makeNative manually to avoid a native animated bug. See
       // https://github.com/facebook/react-native/pull/14435
       containerWidthAnimatedValue.__makeNative();
@@ -234,7 +235,7 @@ const ScrollableTabView = createReactClass({
         ref={(scrollView) => { this.scrollView = scrollView; }}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: this.state.scrollXIOS, }, }, }, ],
-          { useNativeDriver: true, listener: this._onScroll, }
+          { useNativeDriver: false, listener: this._onScroll, }
         )}
         onMomentumScrollBegin={this._onMomentumScrollBeginAndEnd}
         onMomentumScrollEnd={this._onMomentumScrollBeginAndEnd}
@@ -247,7 +248,7 @@ const ScrollableTabView = createReactClass({
         keyboardDismissMode="on-drag"
         {...this.props.contentProps}
       >
-          {scenes}
+        {scenes}
       </Animated.ScrollView>;
     } else {
       const scenes = this._composeScenes();
@@ -266,7 +267,7 @@ const ScrollableTabView = createReactClass({
             },
           }, ],
           {
-            useNativeDriver: true,
+            useNativeDriver: false,
             listener: this._onScroll,
           },
         )}
