@@ -13,8 +13,8 @@ npx expo install react-native-pager-view clwy-expo-scrollable-tab-view
 ## Basic usage
 
 ```javascript
-import ScrollableTabView, { ScrollableTabBar } from 'clwy-expo-scrollable-tab-view'
 import { StyleSheet, Text } from 'react-native'
+import ScrollableTabView, { ScrollableTabBar } from 'clwy-expo-scrollable-tab-view'
 
 export default function Index() {
   return (
