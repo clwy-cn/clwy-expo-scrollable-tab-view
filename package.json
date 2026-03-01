@@ -1,6 +1,6 @@
 {
   "name": "clwy-expo-scrollable-tab-view",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/clwy-cn/clwy-expo-scrollable-tab-view#readme",
   "dependencies": {
-    "react-native-pager-view": "^6.7.1",
+    "react-native-pager-view": "^8.0.0",
     "create-react-class": "^15.7.0",
     "prop-types": "^15.8.1",
     "react-timer-mixin": "^0.13.4",
