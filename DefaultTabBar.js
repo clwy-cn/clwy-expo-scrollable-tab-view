@@ -6,9 +6,13 @@ const {
   StyleSheet,
   Text,
   View,
-  Animated
+  Animated,
+  Platform
 } = require('react-native');
-const Button = require('./Button');
+const Button = Platform.select({
+  android: require('./Button.android'),
+  ios: require('./Button.ios'),
+});
 
 const DefaultTabBar = createReactClass({
   propTypes: {
